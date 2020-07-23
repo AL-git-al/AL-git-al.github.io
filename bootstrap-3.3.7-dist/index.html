@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机点餐系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+            width: 100%;
+            margin: 0px auto;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+
+
+        }
+
+        li {
+            width: 20%;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            -webkit-clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+            clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+            background: aqua;
+            margin: 20px 20px;
+            font-size: 12px;
+            color: rosybrown;
+
+        }
+
+        button {
+            display: block;
+            line-height: 70px;
+            width: 130px;
+            height: 70px;
+            background: rebeccapurple;
+            border: 0;
+            text-align: center;
+            margin: 20px auto;
+            color: #fff;
+        }
+
+        li.active {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button>
+        <h2>你点我啊!</h2>
+    </button>
+    <ul>
+        <li>1:姜汤饭</li>
+        <li>2:卤肉饭</li>
+        <li>3:牛肉汤</li>
+        <li>4:饺子</li>
+        <li>5:花甲粉</li>
+        <li>6:麻辣香锅</li>
+        <li>7:重庆小面</li>
+        <li>8:五谷渔粉</li>
+        <li>9:蒸菜</li>
+        <li>10:鱼的错</li>
+        <li>11:快餐</li>
+        <li>12:湘菜</li>
+        <li>13:麻辣烫</li>
+        <li>14:鸡公煲</li>
+        <li>15:鱼的错</li>
+    </ul>
+</body>
+<script>
+    window.onload = function () {
+
+        document.querySelector('button').onclick = function () {
+            for (let i of document.querySelectorAll('li')) {
+                console.log(i);
+                i.classList.remove('active')
+            }
+            setTimeout(() => {
+                document.querySelectorAll('li')[parseInt(Math.random() * 14)].className = 'active'
+            }, 3000)
+        }
+    }
+</script>
+
+</html>
